@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار المشروع بدون Live Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .info {
+            color: #17a2b8;
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 اختبار المشروع بدون Live Server</h1>
+        
+        <div id="test-results">
+            <h2>نتائج الاختبار:</h2>
+            <div id="js-test" class="info">⏳ جاري اختبار JavaScript...</div>
+            <div id="css-test" class="info">⏳ جاري اختبار CSS...</div>
+            <div id="images-test" class="info">⏳ جاري اختبار الصور...</div>
+            <div id="overall-test" class="info">⏳ جاري الاختبار الشامل...</div>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button class="test-button" onclick="runTests()">🔄 إعادة تشغيل الاختبارات</button>
+            <button class="test-button" onclick="openMainSite()">🌐 فتح الموقع الرئيسي</button>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <h3>📋 تعليمات:</h3>
+            <ul>
+                <li>إذا ظهرت جميع الاختبارات باللون الأخضر ✅، فالمشروع يعمل بشكل صحيح</li>
+                <li>إذا ظهرت أي اختبارات باللون الأحمر ❌، فهناك مشكلة تحتاج إلى حل</li>
+                <li>اضغط على "فتح الموقع الرئيسي" لاختبار الموقع الفعلي</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function runTests() {
+            // اختبار JavaScript
+            const jsTest = document.getElementById('js-test');
+            try {
+                // اختبار وجود المكتبات المطلوبة
+                if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof Lenis !== 'undefined') {
+                    jsTest.innerHTML = '✅ JavaScript: جميع المكتبات محملة بنجاح';
+                    jsTest.className = 'success';
+                } else {
+                    jsTest.innerHTML = '❌ JavaScript: بعض المكتبات غير محملة';
+                    jsTest.className = 'error';
+                }
+            } catch (e) {
+                jsTest.innerHTML = '❌ JavaScript: خطأ في تحميل المكتبات - ' + e.message;
+                jsTest.className = 'error';
+            }
+            
+            // اختبار CSS
+            const cssTest = document.getElementById('css-test');
+            try {
+                const testElement = document.createElement('div');
+                testElement.className = 'content--sticky';
+                document.body.appendChild(testElement);
+                
+                const computedStyle = window.getComputedStyle(testElement);
+                if (computedStyle.position !== 'static') {
+                    cssTest.innerHTML = '✅ CSS: الأنماط محملة بنجاح';
+                    cssTest.className = 'success';
+                } else {
+                    cssTest.innerHTML = '❌ CSS: مشكلة في تحميل الأنماط';
+                    cssTest.className = 'error';
+                }
+                
+                document.body.removeChild(testElement);
+            } catch (e) {
+                cssTest.innerHTML = '❌ CSS: خطأ في اختبار الأنماط - ' + e.message;
+                cssTest.className = 'error';
+            }
+            
+            // اختبار الصور
+            const imagesTest = document.getElementById('images-test');
+            try {
+                const testImg = new Image();
+                testImg.onload = function() {
+                    imagesTest.innerHTML = '✅ الصور: يمكن تحميل الصور بنجاح';
+                    imagesTest.className = 'success';
+                };
+                testImg.onerror = function() {
+                    imagesTest.innerHTML = '❌ الصور: مشكلة في تحميل الصور';
+                    imagesTest.className = 'error';
+                };
+                testImg.src = 'img/LOGO PNG.png';
+            } catch (e) {
+                imagesTest.innerHTML = '❌ الصور: خطأ في اختبار الصور - ' + e.message;
+                imagesTest.className = 'error';
+            }
+            
+            // اختبار شامل
+            const overallTest = document.getElementById('overall-test');
+            setTimeout(() => {
+                const allTests = document.querySelectorAll('#test-results > div');
+                let passedTests = 0;
+                let totalTests = 0;
+                
+                allTests.forEach(test => {
+                    if (test.id !== 'overall-test') {
+                        totalTests++;
+                        if (test.className === 'success') {
+                            passedTests++;
+                        }
+                    }
+                });
+                
+                if (passedTests === totalTests) {
+                    overallTest.innerHTML = `✅ الاختبار الشامل: نجح ${passedTests}/${totalTests} اختبار`;
+                    overallTest.className = 'success';
+                } else {
+                    overallTest.innerHTML = `❌ الاختبار الشامل: فشل ${totalTests - passedTests}/${totalTests} اختبار`;
+                    overallTest.className = 'error';
+                }
+            }, 1000);
+        }
+        
+        function openMainSite() {
+            window.open('index.html', '_blank');
+        }
+        
+        // تشغيل الاختبارات تلقائياً عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            setTimeout(runTests, 500);
+        });
+    </script>
+</body>
+</html>
