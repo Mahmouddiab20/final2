@@ -362,12 +362,48 @@
         box-shadow: none;
     }
 
-    .ticker-item img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        display: block;
-        border-radius: 0;
+    /* الصور للأجهزة اللوحية */
+    @media (max-width: 768px) {
+        .ticker-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
+    }
+
+    /* الصور للهواتف الكبيرة */
+    @media (max-width: 425px) {
+        .ticker-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
+    }
+
+    /* الصور للهواتف المتوسطة */
+    @media (max-width: 375px) {
+        .ticker-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
+    }
+
+    /* الصور للهواتف الصغيرة */
+    @media (max-width: 320px) {
+        .ticker-item img {
+            width: 100%;
+            height: 312px;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
     }
 
     /* أزرار التحكم للموبايل */
@@ -723,7 +759,7 @@
   width: 80%;
   max-width: 400px;
   height: 100vh;
-  background: var(--color-bg);
+  background:linear-gradient(135deg, #C8A87C, #8C6B46);
   transform: translateX(100%);
   transition: transform 0.3s ease;
   overflow-y: auto;
@@ -937,6 +973,15 @@
   cursor: pointer;
   position: relative;
   margin: 0 auto;
+}
+
+/* Override for screens between 375px and 320px only */
+@media (max-width: 375px) and (min-width: 321px) {
+  .flip-card {
+    width: 180px !important;
+    max-width: 70% !important;
+    height: 250px !important;
+  }
 }
 
 .flip-card-inner {
@@ -1467,8 +1512,8 @@
 
 /* ===== MOBILE CARDS SEPARATE SIZES ===== */
 
-/* 375px Screen - Small Mobile Cards */
-@media (max-width: 376px) {
+/* 375px Screen - Small Mobile Cards (between 375px and 320px only) */
+@media (max-width: 375px) and (min-width: 321px) {
   /* ===== 375px CARDS STYLES ===== */
   /* Mobile Cards Container - 375px */
   .mobile-cards-container {
@@ -1518,32 +1563,32 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  /* Flip Card - 375px */
+  /* Flip Card - 375px - Larger size for better visibility */
   .flip-card {
-    width: 150px !important;
-    height: 220px !important;
-    flex: 0 0 160px !important;
-    max-width: 60% !important;
+    width: 220px !important;
+    height: 350px !important;
+    flex: 0 0 180px !important;
+    max-width: 100% !important;
   }
   
   .flip-card-back h3 {
-    font-size: 14px;
-    margin-bottom: 6px;
+    font-size: 16px;
+    margin-bottom: 8px;
   }
 
   .flip-card-back p {
-    font-size: 10px;
-    line-height: 1.1;
+    font-size: 12px;
+    line-height: 1.3;
   }
   
   .flip-card-front h4 {
-    font-size: 12px;
-    margin: -25px 0 10px 0;
-    padding: 2px 4px;
+    font-size: 14px;
+    margin: -30px 0 15px 0;
+    padding: 4px 8px;
   }
   
   .flip-card-back {
-    padding: 15px 10px;
+    padding: 20px 15px;
   }
 }
 
@@ -1729,7 +1774,30 @@
   .apartment-price {
     font-size: 0.8rem;
   }
+  
+  /* City Guide Button Mobile Styles */
+  .city-guide-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #C8A87C;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 6px 12px;
+    background: rgba(200, 168, 124, 0.1);
+    border: 2px solid transparent;
+    font-size: 0.8rem;
+  }
+  
+  .city-guide-btn:hover {
+    color: #8C6B46;
+    background: rgba(200, 168, 124, 0.2);
+    border-color: #C8A87C;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(200, 168, 124, 0.3);
+  }
 }
+
 
 /* 320px Screen - Extra Small Mobile Cards */
 @media (max-width: 320px) {
@@ -1901,12 +1969,12 @@
   
   /* الكارت الأول hover effect */
   #card1:hover .flip-card-inner {
-    box-shadow: 0 15px 35px rgba(0, 200, 83, 0.3);
+    box-shadow: 0 15px 35px rgba(209, 147, 60, 0.3);
   }
   
   /* الكارت الثاني hover effect */
   #card2:hover .flip-card-inner {
-    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 15px 35px rgba(209, 147, 60, 0.3);
   }
 }
 
@@ -3615,8 +3683,8 @@ border: 3px solid #C8A87C;
   }
   
   .whatsapp-btn {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   
   .inspection-float {
@@ -3625,8 +3693,8 @@ border: 3px solid #C8A87C;
   }
   
   .inspection-btn {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   
   .inspection-btn .btn-text {
@@ -3651,6 +3719,535 @@ border: 3px solid #C8A87C;
   
   .mobile-menu {
     width: 90%;
+  }
+  
+  /* News Ticker Section - Mobile 768px */
+  .news-ticker-section {
+    background: linear-gradient(135deg, rgba(200, 168, 124, 0.12), rgba(140, 107, 70, 0.12));
+    padding: 2.5rem 1.5rem;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border: 2px solid rgba(200, 168, 124, 0.3);
+    min-height: 400px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .ticker-title {
+    font-size: 1.6rem;
+    color: #8C6B46;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.12);
+    text-align: center;
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+  }
+  
+  .ticker-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    min-height: 200px;
+  }
+  
+  .ticker-container {
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background: transparent;
+    cursor: grab;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  }
+  
+  .ticker-container:active {
+    cursor: grabbing;
+  }
+  
+  .ticker-content {
+    display: flex;
+    gap: 15px;
+    will-change: transform;
+    padding: 15px;
+  }
+  
+  .ticker-item {
+    flex: 0 0 auto;
+    width: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(200, 168, 124, 0.25);
+  }
+  
+  .ticker-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(200, 168, 124, 0.5);
+  }
+  
+  .ticker-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .ticker-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* أزرار التحكم - Mobile 768px */
+  .control-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    border: none;
+    padding: 10px 12px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10;
+    color: white;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-btn:hover {
+    background: linear-gradient(135deg, #8C6B46, #C8A87C);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+  
+  .control-left { 
+    left: 10px; 
+  }
+  
+  .control-right { 
+    right: 10px; 
+  }
+}
+
+/* Mobile 425px */
+@media screen and (max-width: 425px) {
+  /* News Ticker Section - Mobile 425px */
+  .news-ticker-section {
+    background: linear-gradient(135deg, rgba(200, 168, 124, 0.1), rgba(140, 107, 70, 0.1));
+    padding: 2rem 1rem;
+    margin: 1.5rem auto;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(200, 168, 124, 0.25);
+    min-height: 350px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .ticker-title {
+    font-size: 1.4rem;
+    color: #8C6B46;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.3px;
+  }
+  
+  .ticker-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    min-height: 180px;
+  }
+  
+  .ticker-container {
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    cursor: grab;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ticker-container:active {
+    cursor: grabbing;
+  }
+  
+  .ticker-content {
+    display: flex;
+    gap: 12px;
+    will-change: transform;
+    padding: 12px;
+  }
+  
+  .ticker-item {
+    flex: 0 0 auto;
+    width: 240px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    background: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(200, 168, 124, 0.2);
+  }
+  
+  .ticker-item:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-color: rgba(200, 168, 124, 0.4);
+  }
+  
+  .ticker-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .ticker-item:hover img {
+    transform: scale(1.03);
+  }
+  
+  /* أزرار التحكم - Mobile 425px */
+  .control-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    border: none;
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+    color: white;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-btn:hover {
+    background: linear-gradient(135deg, #8C6B46, #C8A87C);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  }
+  
+  .control-left { 
+    left: 8px; 
+  }
+  
+  .control-right { 
+    right: 8px; 
+  }
+}
+
+/* Mobile 375px */
+@media screen and (max-width: 375px) {
+  /* News Ticker Section - Mobile 375px */
+  .news-ticker-section {
+    background: linear-gradient(135deg, rgba(200, 168, 124, 0.08), rgba(140, 107, 70, 0.08));
+    padding: 1.8rem 0.8rem;
+    margin: 1.2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(200, 168, 124, 0.2);
+    min-height: 320px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .ticker-title {
+    font-size: 1.2rem;
+    color: #8C6B46;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    text-align: center;
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.2px;
+  }
+  
+  .ticker-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    min-height: 160px;
+  }
+  
+  .ticker-container {
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    cursor: grab;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .ticker-container:active {
+    cursor: grabbing;
+  }
+  
+  .ticker-content {
+    display: flex;
+    gap: 10px;
+    will-change: transform;
+    padding: 10px;
+  }
+  
+  .ticker-item {
+    flex: 0 0 auto;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(200, 168, 124, 0.15);
+  }
+  
+  .ticker-item:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: rgba(200, 168, 124, 0.3);
+  }
+  
+  .ticker-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+  
+  .ticker-item:hover img {
+    transform: scale(1.02);
+  }
+  
+  /* أزرار التحكم - Mobile 375px */
+  .control-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    border: none;
+    padding: 6px 8px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 10;
+    color: white;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-btn:hover {
+    background: linear-gradient(135deg, #8C6B46, #C8A87C);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .control-left { 
+    left: 6px; 
+  }
+  
+  .control-right { 
+    right: 6px; 
+  }
+}
+
+/* Mobile 320px */
+@media screen and (max-width: 320px) {
+  /* News Ticker Section - Mobile 320px */
+  .news-ticker-section {
+    background: linear-gradient(135deg, rgba(200, 168, 124, 0.06), rgba(140, 107, 70, 0.06));
+    padding: 1.5rem 0.6rem;
+    margin: 1rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(200, 168, 124, 0.15);
+    min-height: 280px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .ticker-title {
+    font-size: 1rem;
+    color: #8C6B46;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.06);
+    text-align: center;
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.1px;
+  }
+  
+  .ticker-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 140px;
+  }
+  
+  .ticker-container {
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .ticker-container:active {
+    cursor: grabbing;
+  }
+  
+  .ticker-content {
+    display: flex;
+    gap: 8px;
+    will-change: transform;
+    padding: 8px;
+  }
+  
+  .ticker-item {
+    flex: 0 0 auto;
+    width: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(200, 168, 124, 0.1);
+  }
+  
+  .ticker-item:hover {
+    transform: translateY(-1px) scale(1.005);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-color: rgba(200, 168, 124, 0.25);
+  }
+  
+  .ticker-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  .ticker-item:hover img {
+    transform: scale(1.02);
+  }
+  
+  /* أزرار التحكم - Mobile 320px */
+  .control-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #C8A87C, #8C6B46);
+    border: none;
+    padding: 5px 6px;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+    color: white;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-btn:hover {
+    background: linear-gradient(135deg, #8C6B46, #C8A87C);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+  
+  .control-left { 
+    left: 5px; 
+  }
+  
+  .control-right { 
+    right: 5px; 
   }
 }
 

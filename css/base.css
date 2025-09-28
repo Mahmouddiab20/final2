@@ -628,6 +628,27 @@ i {
 	margin: 0;
 }
 
+/* City Guide Button Styles */
+.city-guide-btn {
+	display: inline-block;
+	text-decoration: none;
+	color: #C8A87C;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border-radius: 8px;
+	padding: 8px 16px;
+	background: rgba(200, 168, 124, 0.1);
+	border: 2px solid transparent;
+}
+
+.city-guide-btn:hover {
+	color: #8C6B46;
+	background: rgba(200, 168, 124, 0.2);
+	border-color: #C8A87C;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(200, 168, 124, 0.3);
+}
+
 /* Touch/Swipe Support */
 .apartment-slider {
 	touch-action: pan-y;
@@ -1271,7 +1292,7 @@ i {
 	justify-content: center;
 	width: 60px;
 	height: 60px;
-	background: #C8A87C;
+	background:#39c74b;
 	border-radius: 50%;
 	color: white;
 	text-decoration: none;

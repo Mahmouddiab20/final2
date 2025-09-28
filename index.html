@@ -121,6 +121,335 @@
 				50% { opacity: 1; }
 			}
 
+			/* Social Media Icons Styles */
+			.social-links {
+				display: flex;
+				gap: 15px;
+				flex-wrap: wrap;
+				align-items: center;
+			}
+
+			.social-links a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 55px;
+				height: 55px;
+				background: white;
+				border-radius: 50%;
+				color: white;
+				text-decoration: none;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+				border: 2px solid transparent;
+			}
+
+			.social-links a:hover {
+				transform: translateY(-3px) scale(1.1);
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+			}
+
+			.social-links a svg {
+				transition: all 0.3s ease;
+				width: 32px;
+				height: 32px;
+			}
+
+			.social-links a:hover svg {
+				transform: rotate(5deg);
+			}
+
+			/* WhatsApp - Green */
+			.social-links a[href*="wa.me"] {
+				background: #25D366;
+				border-color: #25D366;
+			}
+
+			.social-links a[href*="wa.me"]:hover {
+				background: #128C7E;
+				border-color: #128C7E;
+			}
+
+			/* Facebook - Blue */
+			.social-links a[href*="facebook.com"] {
+				background: #1877F2;
+				border-color: #1877F2;
+			}
+
+			.social-links a[href*="facebook.com"]:hover {
+				background: #166FE5;
+				border-color: #166FE5;
+			}
+
+			/* Twitter/X - Black */
+			.social-links a[href*="x.com"] {
+				background: #000000;
+				border-color: #000000;
+			}
+
+			.social-links a[href*="x.com"]:hover {
+				background: #333333;
+				border-color: #333333;
+			}
+
+			/* TikTok - Black */
+			.social-links a[href*="tiktok.com"] {
+				background: #000000;
+				border-color: #000000;
+			}
+
+			.social-links a[href*="tiktok.com"]:hover {
+				background: #333333;
+				border-color: #333333;
+			}
+
+			/* Snapchat - Yellow */
+			.social-links a[href*="snapchat.com"] {
+				background: #FFFC00;
+				border-color: #FFFC00;
+				color: #000000;
+			}
+
+			.social-links a[href*="snapchat.com"]:hover {
+				background: #E6E600;
+				border-color: #E6E600;
+			}
+
+			/* Email - Red */
+			.social-links a[href*="mailto"] {
+				background: #EA4335;
+				border-color: #EA4335;
+			}
+
+			.social-links a[href*="mailto"]:hover {
+				background: #D33B2C;
+				border-color: #D33B2C;
+			}
+
+			/* Mobile Social Links Styles */
+			.mobile-social-links {
+				display: flex;
+				gap: 12px;
+				margin-top: 15px;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.mobile-social-links a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 45px;
+				height: 45px;
+				background: white;
+				border-radius: 50%;
+				color: white;
+				text-decoration: none;
+				transition: all 0.3s ease;
+				box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+				border: 2px solid transparent;
+			}
+
+			.mobile-social-links a:hover {
+				transform: translateY(-2px) scale(1.05);
+				box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+			}
+
+			.mobile-social-links a svg {
+				transition: all 0.3s ease;
+				width: 28px;
+				height: 28px;
+			}
+
+			.mobile-social-links a:hover svg {
+				transform: rotate(3deg);
+			}
+
+			/* Mobile WhatsApp - Green */
+			.mobile-whatsapp {
+				background: #25D366 !important;
+				border-color: #25D366 !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				width: 45px !important;
+				height: 45px !important;
+				border-radius: 50% !important;
+				text-decoration: none !important;
+				transition: all 0.3s ease !important;
+				box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1) !important;
+				border: 2px solid #25D366 !important;
+				margin-bottom: 10px !important;
+			}
+
+			.mobile-whatsapp:hover {
+				background: #128C7E !important;
+				border-color: #128C7E !important;
+				transform: translateY(-2px) scale(1.05) !important;
+				box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+			}
+
+			.mobile-whatsapp svg {
+				width: 28px !important;
+				height: 28px !important;
+				transition: all 0.3s ease !important;
+			}
+
+			/* Mobile Contact Buttons */
+			.mobile-contact-buttons {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				margin: 15px 0;
+			}
+
+			.mobile-call-btn,
+			.mobile-contact-btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				padding: 12px 20px;
+				background: linear-gradient(135deg, #C8A87C, #8C6B46);
+				color: white;
+				text-decoration: none;
+				border-radius: 25px;
+				font-weight: 600;
+				font-size: 16px;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(200, 168, 124, 0.3);
+				border: none;
+				cursor: pointer;
+			}
+
+			.mobile-call-btn:hover,
+			.mobile-contact-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(200, 168, 124, 0.5);
+				background: linear-gradient(135deg, #8C6B46, #C8A87C);
+			}
+
+			.mobile-call-btn svg,
+			.mobile-contact-btn svg {
+				width: 20px;
+				height: 20px;
+				transition: all 0.3s ease;
+			}
+
+			.mobile-call-btn:hover svg,
+			.mobile-contact-btn:hover svg {
+				transform: scale(1.1);
+			}
+
+			/* WhatsApp specific styling */
+			.mobile-call-btn {
+				background: linear-gradient(135deg, #25D366, #128C7E) !important;
+			}
+
+			.mobile-call-btn:hover {
+				background: linear-gradient(135deg, #128C7E, #25D366) !important;
+			}
+
+			/* RTL Text Direction for Mobile Menu */
+			.mobile-menu-content {
+				direction: rtl;
+				text-align: right;
+			}
+
+			.mobile-nav-list {
+				direction: rtl;
+				text-align: right;
+			}
+
+			.mobile-nav-list li {
+				text-align: right;
+			}
+
+			.mobile-nav-list a {
+				text-align: right;
+				direction: rtl;
+			}
+
+			.mobile-contact {
+				direction: rtl;
+				text-align: right;
+			}
+
+			.mobile-contact-buttons {
+				direction: rtl;
+			}
+
+			.mobile-call-btn,
+			.mobile-contact-btn {
+				direction: rtl;
+				text-align: right;
+				flex-direction: row-reverse;
+			}
+
+			.mobile-call-btn span,
+			.mobile-contact-btn span {
+				direction: rtl;
+				text-align: right;
+			}
+
+			/* Mobile Facebook - Blue */
+			.mobile-social-links a[href*="facebook.com"] {
+				background: #1877F2;
+				border-color: #1877F2;
+			}
+
+			.mobile-social-links a[href*="facebook.com"]:hover {
+				background: #166FE5;
+				border-color: #166FE5;
+			}
+
+			/* Mobile Twitter/X - Black */
+			.mobile-social-links a[href*="x.com"] {
+				background: #000000;
+				border-color: #000000;
+			}
+
+			.mobile-social-links a[href*="x.com"]:hover {
+				background: #333333;
+				border-color: #333333;
+			}
+
+			/* Mobile TikTok - Black */
+			.mobile-social-links a[href*="tiktok.com"] {
+				background: #000000;
+				border-color: #000000;
+			}
+
+			.mobile-social-links a[href*="tiktok.com"]:hover {
+				background: #333333;
+				border-color: #333333;
+			}
+
+			/* Mobile Snapchat - Yellow */
+			.mobile-social-links a[href*="snapchat.com"] {
+				background: #FFFC00;
+				border-color: #FFFC00;
+				color: #000000;
+			}
+
+			.mobile-social-links a[href*="snapchat.com"]:hover {
+				background: #E6E600;
+				border-color: #E6E600;
+			}
+
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+				.social-links {
+					gap: 12px;
+					justify-content: center;
+				}
+				
+				.social-links a {
+					width: 63px;
+        height: 64px;
+				}
+			}
+
 		</style>
 		
 		<!-- Immediate Ctrl+R Redirect Script -->
@@ -318,11 +647,11 @@
 						<a href="#home" class="nav-link">الرئيسية</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a href="#apartments" class="nav-link">الشقق ▼</a>
-						<ul class="dropdown-menu">
+						<a href="#apartments" class="nav-link">الشقق </a>
+						<!-- <ul class="dropdown-menu">
 							<li><a href="rooms-1br.html">شقق غرفة واحدة</a></li>
 							<li><a href="rooms-2br.html">شقق غرفتين</a></li>
-						</ul>
+						</ul> -->
 					</li>
 				</ul>
 				
@@ -358,10 +687,10 @@
 					<ul class="mobile-nav-list">
 						<li><a href="#home">الرئيسية</a></li>
 						<li class="mobile-dropdown">
-							<a href="#apartments" class="mobile-dropdown-toggle">الشقق <span>▼</span></a>
+							<a href="#apartments" class="nav-link">الشقق </a>
 							<ul class="mobile-dropdown-menu">
-								<li><a href="rooms-1br.html">شقق غرفة واحدة</a></li>
-								<li><a href="rooms-2br.html">شقق غرفتين</a></li>
+								<!-- <li><a href="rooms-1br.html">شقق غرفة واحدة</a></li>
+								<li><a href="rooms-2br.html">شقق غرفتين</a></li> -->
 							</ul>
 						</li>
 						<li><a href="#guide">دليل اقامتك في المدينه المنورة</a></li>
@@ -369,9 +698,20 @@
 						<li><a href="#booking">احجز معاينه</a></li>
 					</ul>
 					<div class="mobile-contact">
-						<h3>تواصل معنا</h3>
-						<a href="https://wa.me/966501234567" class="mobile-whatsapp">واتساب</a>
-						<a href="tel:+966501234567" class="mobile-phone">اتصل بنا</a>
+						<div class="mobile-contact-buttons">
+							<a href="https://wa.me/966536855058" class="mobile-call-btn">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+								</svg>
+								<span>اتصل بنا</span>
+							</a>
+							<a href="#footer" class="mobile-contact-btn">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+								</svg>
+								<span>تواصل معنا</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -379,7 +719,7 @@
 
 		<!-- WhatsApp Floating Button -->
 		<div class="whatsapp-float">
-			<a href="https://wa.me/966501234567" target="_blank" class="whatsapp-btn">
+			<a href="https://wa.me/966536855058" target="_blank" class="whatsapp-btn">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
 					<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" fill="currentColor"/>
 				</svg>
@@ -433,115 +773,81 @@
 
 					<!-- Book for Viewing CTA -->
 					<div class="hero-cta">
-						<a href="https://wa.me/966501234567" class="booking-cta" target="_blank">
+						<a href="https://wa.me/966536855058" class="booking-cta" target="_blank">
 							<span class="cta-text">احجز للمعاينة</span>
 							<span class="cta-icon">💬</span>
 						</a>
 					</div>
-					<!-- News Ticker Section -->
+				</div>
+			</header>
+			
+			<!-- News Ticker Section - منفصل عن hero-content -->
 			<div class="news-ticker-section">
-				<h2 class="ticker-title"> معرض الصور </h2>
+				<h3 class="ticker-title" style="color: #ffffff;"> معرض الصور </h3>
 				<div class="ticker-wrapper">
 					<div class="ticker-container" id="tickerContainer">
 						<div class="ticker-content" id="ticker">
+							<!-- صور الغرف فقط -->
 							<div class="ticker-item">
-								<img src="assets/imgs/masjid-nabawi-3639064.jpg" alt="المسجد النبوي">
+								<img src="assets/imgs/1-room.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/مسجد قباء.jpg" alt="مسجد قباء">
+								<img src="assets/imgs/2-room.jpg" alt="غرفتين">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3407.jpg" alt="شقق مفروشة">
+								<img src="assets/imgs/rrom.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3392.jpg" alt="شقق داخلية">
+								<img src="assets/imgs/rrrr.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3393.jpg" alt="مرافق الشقق">
+								<img src="assets/imgs/rrrrr.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3394.jpg" alt="غرف النوم">
+								<img src="assets/imgs/rrrrrr.jpg" alt="غرفة نوم">
+							</div>
+							<!-- تكرار صور الغرف للتأثير المستمر -->
+							<div class="ticker-item">
+								<img src="assets/imgs/1-room.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3398.jpg" alt="الصالة">
+								<img src="assets/imgs/2-room.jpg" alt="غرفتين">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3399.jpg" alt="المطبخ">
+								<img src="assets/imgs/rrom.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3405.jpg" alt="الحمام">
+								<img src="assets/imgs/rrrr.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3406.jpg" alt="المرافق">
-							</div>
-							<!-- تكرار نفس العناصر للتأثير المستمر -->
-							<div class="ticker-item">
-								<img src="assets/imgs/masjid-nabawi-3639064.jpg" alt="المسجد النبوي">
+								<img src="assets/imgs/rrrrr.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/مسجد قباء.jpg" alt="مسجد قباء">
+								<img src="assets/imgs/rrrrrr.jpg" alt="غرفة نوم">
+							</div>
+							<!-- تكرار ثالث لضمان الاستمرارية -->
+							<div class="ticker-item">
+								<img src="assets/imgs/1-room.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3407.jpg" alt="شقق مفروشة">
+								<img src="assets/imgs/2-room.jpg" alt="غرفتين">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3392.jpg" alt="شقق داخلية">
+								<img src="assets/imgs/rrom.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3393.jpg" alt="مرافق الشقق">
+								<img src="assets/imgs/rrrr.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3394.jpg" alt="غرف النوم">
+								<img src="assets/imgs/rrrrr.jpg" alt="غرفة نوم">
 							</div>
 							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3398.jpg" alt="الصالة">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3399.jpg" alt="المطبخ">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3405.jpg" alt="الحمام">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3406.jpg" alt="المرافق">
-							</div>
-							<!-- تكرار إضافي لضمان الاستمرارية -->
-							<div class="ticker-item">
-								<img src="assets/imgs/masjid-nabawi-3639064.jpg" alt="المسجد النبوي">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/مسجد قباء.jpg" alt="مسجد قباء">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3407.jpg" alt="شقق مفروشة">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3392.jpg" alt="شقق داخلية">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3393.jpg" alt="مرافق الشقق">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3394.jpg" alt="غرف النوم">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3398.jpg" alt="الصالة">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3399.jpg" alt="المطبخ">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3405.jpg" alt="الحمام">
-							</div>
-							<div class="ticker-item">
-								<img src="assets/imgs/IMG_3406.jpg" alt="المرافق">
+								<img src="assets/imgs/rrrrrr.jpg" alt="غرفة نوم">
 							</div>
 						</div>
 					</div>
 				</div>
-			
-				</div>
-			</header>
+			</div>
 			
 			
 			<div class="content content--highlight content--intro">
@@ -691,7 +997,7 @@
 								<!-- الكارت -->
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/imgs/masjid-al-qiblatain-in-almadinah.jpg" alt="Card Image">
+										<img src="assets/imgs/2-room.jpg" alt="Card Image">
 										<h4>اقلب الكارت</h4>
 									</div>
 									<div class="flip-card-back">
@@ -724,7 +1030,7 @@
 								<!-- الكارت -->
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/imgs/IMG_3407.jpg" alt="Card Image">
+										<img src="assets/imgs/2-room.jpg" alt="Card Image">
 										<h4>اقلب الكارت</h4>
 									</div>
 									<div class="flip-card-back">
@@ -824,7 +1130,7 @@
 						<!-- Desktop Apartment Slider -->
 						<div class="desktop-slider-info">
 							<h2 class="desktop-apartment-title">دليلك السياحي في المدينة المنورة</h2>
-							<p class="desktop-apartment-price">اكتشف المعالم القريبة من وايت دايموند بلازا</p>
+							<a href="city-guide.html" class="desktop-apartment-price city-guide-btn">اكتشف المعالم القريبة من وايت دايموند بلازا</a>
 						</div>
 						<div class="desktop-apartment-slider">
 							<div class="apartment-slider" id="desktopApartmentSlider">
@@ -1140,7 +1446,7 @@
 						<!-- Slider Info -->
 						<div class="slider-info">
 							<h2 class="apartment-title">دليلك السياحي في المدينة المنورة</h2>
-							<p class="apartment-price">اكتشف المعالم القريبة من وايت دايموند بلازا</p>
+							<a href="city-guide.html" class="apartment-price city-guide-btn">اكتشف المعالم القريبة من وايت دايموند بلازا</a>
 						</div>
 					</div>
 				</div>
@@ -1470,19 +1776,47 @@
 				<img class="content__img spacer" src="img/LOGO PNG.png" />
 			</div>
 			<!-- Footer -->
-			<footer class="footer">
+			<footer id="footer" class="footer">
 				<div class="footer-container">
 					<div class="footer-section">
 						<h3>معلومات الاتصال</h3>
-						<p>📞 الهاتف: +966 50 123 4567</p>
+						<p>📞 الهاتف: +966 53 685 5058</p>
 						<p>📧 البريد الإلكتروني: info@whitediamondplaza.com</p>
 						<p>📍 العنوان: حي بني حارثة، المدينة المنورة</p>
 					</div>
 					<div class="footer-section">
 						<h3>تابعنا</h3>
 						<div class="social-links">
-							<a href="https://wa.me/966501234567" target="_blank">واتساب</a>
-							<a href="mailto:info@whitediamondplaza.com">البريد الإلكتروني</a>
+							<a href="https://wa.me/966536855058" target="_blank" title="واتساب">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+								</svg>
+							</a>
+							<a href="https://www.facebook.com/profile.php?id=61581247356049" target="_blank" title="فيسبوك">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+								</svg>
+							</a>
+							<a href="https://x.com/WhiteP51965" target="_blank" title="تويتر">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+								</svg>
+							</a>
+							<a href="https://www.tiktok.com/@whitediamondplaze" target="_blank" title="تيك توك">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M19.321 6.562a5.124 5.124 0 01-.443-.258 6.228 6.228 0 01-1.137-.966c-.849-.944-1.383-2.183-1.383-3.538V2h-3.057v14.67c0 1.925-1.549 3.474-3.474 3.474s-3.474-1.549-3.474-3.474 1.549-3.474 3.474-3.474c.297 0 .585.038.861.105V9.566a6.908 6.908 0 00-.861-.055c-3.721 0-6.75 3.029-6.75 6.75s3.029 6.75 6.75 6.75 6.75-3.029 6.75-6.75V9.566a9.48 9.48 0 01-5.679 1.83v-4.834z"/>
+								</svg>
+							</a>
+							<a href="https://www.snapchat.com/add/whitediamondpla?share_id=lkEBg23Bwz8&locale=ar-EG" target="_blank" title="سناب شات">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+								</svg>
+							</a>
+							<a href="mailto:info@whitediamondplaza.com" title="البريد الإلكتروني">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+								</svg>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -1683,7 +2017,7 @@
 الهاتف: ${phone}
 رسالة إضافية: ${message}`;
 						
-						const whatsappUrl = `https://wa.me/966501234567?text=${encodeURIComponent(bookingMessage)}`;
+						const whatsappUrl = `https://wa.me/966536855058?text=${encodeURIComponent(bookingMessage)}`;
 						window.open(whatsappUrl, '_blank');
 					})
 					.catch(error => {
@@ -1696,7 +2030,7 @@
 الهاتف: ${phone}
 رسالة إضافية: ${message}`;
 						
-						const whatsappUrl = `https://wa.me/966501234567?text=${encodeURIComponent(bookingMessage)}`;
+						const whatsappUrl = `https://wa.me/966536855058?text=${encodeURIComponent(bookingMessage)}`;
 						window.open(whatsappUrl, '_blank');
 					});
 				});
@@ -1721,7 +2055,7 @@
 الرسالة: ${message}`;
 						
 						// Open WhatsApp
-						const whatsappUrl = `https://wa.me/966501234567?text=${encodeURIComponent(inquiryMessage)}`;
+						const whatsappUrl = `https://wa.me/966536855058?text=${encodeURIComponent(inquiryMessage)}`;
 						window.open(whatsappUrl, '_blank');
 						
 						// Show success message

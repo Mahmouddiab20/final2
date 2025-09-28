@@ -12,7 +12,7 @@
 .ticker-title {
     text-align: center;
     font-size: 2rem;
-    color: #8C6B46;
+    color: white;
     margin-bottom: 30px;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -840,6 +840,28 @@ border: 3px solid #C8A87C;
     margin: 0;
 }
 
+/* Desktop City Guide Button Styles */
+.desktop-apartment-price.city-guide-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.desktop-apartment-price.city-guide-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Desktop Slider Directions Button */
 .desktop-apartment-slider .slider-directions-btn {
     display: inline-block;
@@ -936,6 +958,136 @@ border: 3px solid #C8A87C;
 @media (min-width: 1024px) and (max-width: 1280px) {
     body {
         font-size: 14px;
+    }
+    
+    /* News Ticker Section - لابتوب صغير */
+    .news-ticker-section {
+        background: linear-gradient(135deg, rgba(200, 168, 124, 0.12), rgba(140, 107, 70, 0.12));
+        padding: 3rem 2rem;
+        margin: 2rem auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        border: 2px solid rgba(200, 168, 124, 0.3);
+        min-height: 450px;
+        width: 100%;
+        max-width: 1200px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .ticker-title {
+        font-size: 1.8rem;
+        color: #8C6B46;
+        margin-bottom: 30px;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.12);
+        text-align: center;
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.5px;
+    }
+    
+    .ticker-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        min-height: 250px;
+    }
+    
+    .ticker-container {
+        overflow: hidden;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        background: transparent;
+        cursor: grab;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    }
+    
+    .ticker-container:active {
+        cursor: grabbing;
+    }
+    
+    .ticker-content {
+        display: flex;
+        gap: 20px;
+        will-change: transform;
+        padding: 20px;
+    }
+    
+    .ticker-item {
+        flex: 0 0 auto;
+        width: 360px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        background: white;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(200, 168, 124, 0.25);
+    }
+    
+    .ticker-item:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border-color: rgba(200, 168, 124, 0.5);
+    }
+    
+    .ticker-item img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    .ticker-item:hover img {
+        transform: scale(1.05);
+    }
+    
+    /* أزرار التحكم - لابتوب صغير */
+    .control-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        border: none;
+        padding: 12px 15px;
+        font-size: 22px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 10;
+        color: white;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .control-btn:hover {
+        background: linear-gradient(135deg, #8C6B46, #C8A87C);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 7px 18px rgba(0,0,0,0.3);
+    }
+    
+    .control-left { 
+        left: 12px; 
+    }
+    
+    .control-right { 
+        right: 12px; 
     }
     
     /* Desktop Corporate Package - لابتوب صغير */
@@ -1047,6 +1199,137 @@ border: 3px solid #C8A87C;
         font-size: 16px;
     }
     
+    /* News Ticker Section - لابتوب متوسط */
+    .news-ticker-section {
+        background: linear-gradient(135deg, rgba(200, 168, 124, 0.15), rgba(140, 107, 70, 0.15));
+        padding: 4rem 3rem;
+        margin: 3rem auto;
+        border-radius: 25px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        border: 3px solid rgba(200, 168, 124, 0.4);
+        min-height: 500px;
+        width: 100%;
+        max-width: 1400px;
+        position: relative;
+        z-index: 10;
+        backdrop-filter: blur(3px);
+    }
+    
+    .ticker-title {
+        font-size: 2.2rem;
+        color: #ffffff;
+        margin-bottom: 35px;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+        text-align: center;
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 1px;
+    }
+    
+    .ticker-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        min-height: 300px;
+    }
+    
+    .ticker-container {
+        overflow: hidden;
+        width: 100%;
+        border: none;
+        border-radius: 20px;
+        background: transparent;
+        cursor: grab;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .ticker-container:active {
+        cursor: grabbing;
+    }
+    
+    .ticker-content {
+        display: flex;
+        gap: 25px;
+        will-change: transform;
+        padding: 25px;
+    }
+    
+    .ticker-item {
+        flex: 0 0 auto;
+        width: 720px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        background: white;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 3px solid rgba(200, 168, 124, 0.3);
+    }
+    
+    .ticker-item:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        border-color: rgba(200, 168, 124, 0.6);
+    }
+    
+    .ticker-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+    
+    .ticker-item:hover img {
+        transform: scale(1.08);
+    }
+    
+    /* أزرار التحكم - لابتوب متوسط */
+    .control-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        border: none;
+        padding: 15px 18px;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        z-index: 10;
+        color: white;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .control-btn:hover {
+        background: linear-gradient(135deg, #8C6B46, #C8A87C);
+        transform: translateY(-50%) scale(1.15);
+        box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    }
+    
+    .control-left { 
+        left: 15px; 
+    }
+    
+    .control-right { 
+        right: 15px; 
+    }
+    
     /* Desktop Corporate Package - لابتوب متوسط */
     .desktop-corporate-package {
         display: block;
@@ -1154,6 +1437,136 @@ border: 3px solid #C8A87C;
 @media (min-width: 1441px) and (max-width: 1920px) {
     body {
         font-size: 18px;
+    }
+    
+    /* News Ticker Section - لابتوب كبير */
+    .news-ticker-section {
+        background: linear-gradient(135deg, rgba(200, 168, 124, 0.2), rgba(140, 107, 70, 0.2));
+        padding: 5rem 4rem;
+        margin: 4rem auto;
+        border-radius: 30px;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        border: 4px solid rgba(200, 168, 124, 0.5);
+        min-height: 600px;
+        width: 100%;
+        max-width: 1600px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .ticker-title {
+        font-size: 2.8rem;
+        color: #8C6B46;
+        margin-bottom: 45px;
+        font-weight: 700;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+        text-align: center;
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+    }
+    
+    .ticker-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        backdrop-filter: blur(20px);
+        border: 3px solid rgba(255, 255, 255, 0.4);
+        min-height: 400px;
+    }
+    
+    .ticker-container {
+        overflow: hidden;
+        width: 100%;
+        border: none;
+        border-radius: 25px;
+        background: transparent;
+        cursor: grab;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .ticker-container:active {
+        cursor: grabbing;
+    }
+    
+    .ticker-content {
+        display: flex;
+        gap: 30px;
+        will-change: transform;
+        padding: 30px;
+    }
+    
+    .ticker-item {
+        flex: 0 0 auto;
+        width: 500px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        background: white;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 4px solid rgba(200, 168, 124, 0.4);
+    }
+    
+    .ticker-item:hover {
+        transform: translateY(-12px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        border-color: rgba(200, 168, 124, 0.7);
+    }
+    
+    .ticker-item img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        display: block;
+        border-radius: 16px;
+        transition: transform 0.4s ease;
+    }
+    
+    .ticker-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    /* أزرار التحكم - لابتوب كبير */
+    .control-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        border: none;
+        padding: 20px 24px;
+        font-size: 28px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        z-index: 10;
+        color: white;
+        transition: all 0.4s ease;
+        font-weight: bold;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .control-btn:hover {
+        background: linear-gradient(135deg, #8C6B46, #C8A87C);
+        transform: translateY(-50%) scale(1.2);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    
+    .control-left { 
+        left: 20px; 
+    }
+    
+    .control-right { 
+        right: 20px; 
     }
     
     /* Desktop Corporate Package - لابتوب كبير */
@@ -1264,6 +1677,136 @@ border: 3px solid #C8A87C;
 @media (min-width: 1921px) {
     body {
         font-size: 20px;
+    }
+    
+    /* News Ticker Section - شاشات كبيرة جداً */
+    .news-ticker-section {
+        background: linear-gradient(135deg, rgba(200, 168, 124, 0.25), rgba(140, 107, 70, 0.25));
+        padding: 6rem 5rem;
+        margin: 5rem auto;
+        border-radius: 35px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        border: 5px solid rgba(200, 168, 124, 0.6);
+        min-height: 700px;
+        width: 100%;
+        max-width: 1800px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .ticker-title {
+        font-size: 3.2rem;
+        color: #8C6B46;
+        margin-bottom: 50px;
+        font-weight: 700;
+        text-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+        text-align: center;
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2.5px;
+    }
+    
+    .ticker-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 30px;
+        backdrop-filter: blur(25px);
+        border: 4px solid rgba(255, 255, 255, 0.5);
+        min-height: 450px;
+    }
+    
+    .ticker-container {
+        overflow: hidden;
+        width: 100%;
+        border: none;
+        border-radius: 30px;
+        background: transparent;
+        cursor: grab;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    
+    .ticker-container:active {
+        cursor: grabbing;
+    }
+    
+    .ticker-content {
+        display: flex;
+        gap: 35px;
+        will-change: transform;
+        padding: 35px;
+    }
+    
+    .ticker-item {
+        flex: 0 0 auto;
+        width: 600px;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        background: white;
+        text-align: center;
+        transition: all 0.5s ease;
+        border: 5px solid rgba(200, 168, 124, 0.5);
+    }
+    
+    .ticker-item:hover {
+        transform: translateY(-15px) scale(1.08);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        border-color: rgba(200, 168, 124, 0.8);
+    }
+    
+    .ticker-item img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+        border-radius: 20px;
+        transition: transform 0.5s ease;
+    }
+    
+    .ticker-item:hover img {
+        transform: scale(1.12);
+    }
+    
+    /* أزرار التحكم - شاشات كبيرة جداً */
+    .control-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #C8A87C, #8C6B46);
+        border: none;
+        padding: 25px 30px;
+        font-size: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        z-index: 10;
+        color: white;
+        transition: all 0.5s ease;
+        font-weight: bold;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .control-btn:hover {
+        background: linear-gradient(135deg, #8C6B46, #C8A87C);
+        transform: translateY(-50%) scale(1.25);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+    }
+    
+    .control-left { 
+        left: 25px; 
+    }
+    
+    .control-right { 
+        right: 25px; 
     }
     
     /* Desktop Corporate Package - شاشات كبيرة جداً */

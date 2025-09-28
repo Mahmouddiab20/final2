@@ -593,6 +593,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Cards Slider
     initializeCardsSlider();
+    
+    // Additional check to ensure autoplay starts after page load
+    setTimeout(() => {
+        if (cardsSwiperInstance && !cardsSwiperInstance.autoplay.running) {
+            cardsSwiperInstance.autoplay.start();
+            console.log('Autoplay started after page load');
+        }
+    }, 1000);
 });
 
 // Re-initialize on window resize
@@ -614,7 +622,9 @@ window.addEventListener('resize', () => {
     }
     
     // Re-initialize cards slider on all screen sizes
-    if (!document.querySelector('.mySwiper').swiper) {
+    const swiperElement = document.querySelector('.mySwiper');
+    if (swiperElement) {
+        // Always re-initialize to ensure autoplay works after resize
         initializeCardsSlider();
     }
 });
@@ -625,50 +635,100 @@ window.addEventListener('resize', () => {
 let cardsSwiperInstance = null;
 
 function initializeCardsSlider() {
-    // Check if Swiper is available and instance doesn't exist
-    if (typeof Swiper !== 'undefined' && !cardsSwiperInstance) {
-        cardsSwiperInstance = new Swiper('.mySwiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-                },
-                480: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 1,
-                    spaceBetween: 0,
-                },
-            },
-        });
+    // Check if Swiper is available
+    if (typeof Swiper !== 'undefined') {
+        // Destroy existing swiper instance if it exists
+        if (cardsSwiperInstance) {
+            try {
+                cardsSwiperInstance.destroy(true, true);
+                cardsSwiperInstance = null;
+            } catch (e) {
+                console.log('Error destroying existing swiper:', e);
+            }
+        }
         
-        // Add hover effects to cards
-        const cards = document.querySelectorAll('.SingleCard');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-        
-        console.log('Cards Slider initialized successfully');
+        // Wait a bit for DOM to be ready
+        setTimeout(() => {
+            try {
+                cardsSwiperInstance = new Swiper('.mySwiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 1500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: false,
+                        stopOnLastSlide: false,
+                    },
+                    speed: 800, // Faster transition speed
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                        },
+                        480: {
+                            slidesPerView: 3,
+                            spaceBetween: 15,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            slidesPerGroup: 1,
+                            spaceBetween: 0,
+                        },
+                    },
+                    on: {
+                        init: function() {
+                            console.log('Swiper initialized and autoplay started');
+                            // Force start autoplay
+                            this.autoplay.start();
+                        },
+                        autoplayStart: function() {
+                            console.log('Autoplay started');
+                        },
+                        autoplayStop: function() {
+                            console.log('Autoplay stopped - restarting in 2 seconds');
+                            // Store reference to the swiper instance
+                            const swiperInstance = this;
+                            // Restart autoplay after 2 seconds if it stops
+                            setTimeout(() => {
+                                if (swiperInstance && swiperInstance.autoplay && !swiperInstance.autoplay.running) {
+                                    swiperInstance.autoplay.start();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+                
+                // Force start autoplay immediately
+                setTimeout(() => {
+                    if (cardsSwiperInstance && !cardsSwiperInstance.autoplay.running) {
+                        cardsSwiperInstance.autoplay.start();
+                        console.log('Forced autoplay start');
+                    }
+                }, 500);
+                
+                // Add hover effects to cards
+                const cards = document.querySelectorAll('.SingleCard');
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-10px) scale(1.02)';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+                
+                console.log('Cards Slider initialized successfully');
+            } catch (error) {
+                console.error('Error initializing swiper:', error);
+                addFallbackCardsFunctionality();
+            }
+        }, 100);
     } else {
         console.warn('Swiper library not loaded. Cards slider will not work.');
         
